@@ -1,8 +1,7 @@
-const express = require('express');
+const router = require('express').Router()
 const fs = require('fs');
 const uuid = require('uuid');
 
-const router = express.Router();
 
 // POST route to add a new note
 router.post('/api/notes', (req, res) => {
@@ -27,5 +26,18 @@ router.post('/api/notes', (req, res) => {
 
   res.json(newNote); // Respond with the newly added note
 });
+
+
+app.get('/api/notes', (req, res) => {
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+         if (err) {
+             console.error(err);
+             return;
+         }
+         res.json(JSON.parse(data));
+  });   
+   
+ });
+
 
 module.exports = router;
