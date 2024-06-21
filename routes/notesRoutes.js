@@ -6,7 +6,7 @@ const uuid = require('uuid');
 // POST route to add a new note
 router.post('/api/notes', (req, res) => {
   // Read existing notes from db.json
-  const notes = JSON.parse(fs.readFileSync('data/db.json'));
+  const notes = JSON.parse(fs.readFileSync('db/db.json'));
 
   // Generate a unique id for the new note
   const newNoteId = uuid.v4();
@@ -22,13 +22,13 @@ router.post('/api/notes', (req, res) => {
   notes.push(newNote);
 
   // Write the updated list of notes back to db.json
-  fs.writeFileSync('data/db.json', JSON.stringify(notes, null, 2));
+  fs.writeFileSync('db/db.json', JSON.stringify(notes, null, 2));
 
   res.json(newNote); // Respond with the newly added note
 });
 
 
-app.get('/api/notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
   fs.readFile('db/db.json', 'utf8', (err, data) => {
          if (err) {
              console.error(err);

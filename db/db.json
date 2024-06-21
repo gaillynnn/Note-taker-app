@@ -1,4 +1,22 @@
 [
-    { "id": 1, "title": "Note 1", "text": "This is the first note" },
-    { "id": 2, "title": "Note 2", "text": "This is the second note" }
+  {
+    "id": 1,
+    "title": "Note 1",
+    "text": "This is the first note"
+  },
+  {
+    "id": 2,
+    "title": "Note 2",
+    "text": "This is the second note"
+  },
+  {
+    "id": "d31975fe-9829-4cbd-9e43-f64493585b1a",
+    "title": "fewr",
+    "text": "ewrew"
+  },
+  {
+    "id": "5ba30754-e697-40e4-a4ee-35f2d3a73f4a",
+    "title": "ooo",
+    "text": "hhhh"
+  }
 ]
